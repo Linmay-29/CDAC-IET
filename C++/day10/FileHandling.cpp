@@ -22,10 +22,10 @@ int main(){
     my_file.open("Sample.txt");
     my_file << "new World";
     my_file.seekg(0);
-
+    while(!my_file.eof()){
     getline(my_file,line);
     cout<<line;
     cout<<endl;
-    cout<<line;
+    }
     my_file.close();
 }

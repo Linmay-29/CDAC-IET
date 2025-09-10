@@ -22,7 +22,7 @@ void C::display(){
     cout<<"In class C"<<endl;
 }
 int main(){
-    A *a1 = new C(); 
+    A *a1 = new C() ; 
     a1->display();
 }
  
