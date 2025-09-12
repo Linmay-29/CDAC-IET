@@ -1,0 +1,35 @@
+<html>
+    <title>
+        Form Validation
+    </title>
+    <head>
+        <script>
+          function accept(){
+              let name = document.forms[0]["user"].value;
+              let age = document.forms[0]["age"].value;
+            
+              const alert = document.getElementsByName("alert")[0];
+              if(name.trim() === ""){
+                alert.style.visibility ="visible";
+              }else{
+                if(age>=10 && age<=60){
+
+                }else{
+                  alert.innerText = "Age should be between 10 to 60 yrs";
+                  alert.style.visibility = "visible";
+                }
+              }
+            }
+
+        </script>
+    </head>
+    <body>
+        <form>
+            <input style="margin-top: 20px;" type="text" name ="user" placeholder="Enter Username">
+            <input style="margin-top: 20px;" type="number" name="age" placeholder="Enter Age">
+            <button style="margin-top: 20px;" id="sub" type="button" onclick=accept()>Submit</button>
+            <br><br><br><br>
+            <p name="alert" style="visibility: hidden;">Invalid Name</p>
+        </form>
+    </body>
+</html>

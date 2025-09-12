@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            Pratice
+        </title>
+        
+    </head>
+    <body>
+        <script>
+            let ischange = false;
+            function textchanged(){
+                
+            let a = "Changed";
+           const para = document.getElementById('p1');
+           if(ischange){
+            para.innerText = "Changed";
+           }
+           else{
+            para.innerText = "Original";
+           }
+           ischange = !ischange;
+            }
+            function add(){
+                let n = prompt("Enter the count of number you want to add");
+                let a;
+                let sum = 0;
+                for(let i = 0;i<n;i++){
+                    a = parseInt(prompt("enter number : "));
+                    sum +=a;
+                }
+                let b = prompt("sum : "+ sum);
+            }
+            add();
+            
+        </script>
+        <p id="p1">
+            original
+        </p>
+        <button type="button" onclick="textchanged()">Click</button>
+    </body>
+</html>
