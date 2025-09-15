@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <input id="num1" type="number" placeholder="Enter 1st number">
+        <input id="num2" type="number" placeholder="Enter 2nd number">
+        <br>
+        <p>Result : </p>
+        <p id="result">0</p>
+        <br>
+        <button id="add" onclick="add()">ADD</button>
+        <button id="sub" onclick="sub()">SUB</button>
+        <button id="div" onclick="div()">DIV</button>
+        <button id="mul" onclick="mul()">MULTIPLE</button>
+        <script>
+            function getValue(){
+                let a = parseFloat(document.getElementById("num1").value);
+                let b = parseFloat(document.getElementById("num2").value);
+                return [a,b];
+            }
+            function add(){
+                const [a,b] = getValue();
+                document.getElementById("result").innerText= a+b;
+            }
+            function sub(){
+                const [a,b] = getValue();
+                document.getElementById("result").innerText= a-b;
+            }
+            function div(){
+                const [a,b] = getValue();
+                document.getElementById("result").innerText= a/b;
+            }
+            function mul(){
+                const [a,b] = getValue();
+                document.getElementById("result").innerText= a*b;
+            }
+        </script>
+    </body>
+</html>

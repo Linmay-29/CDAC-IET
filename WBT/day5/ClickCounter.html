@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Button Counter</title>
+    </head>
+    <body>
+        <h1>Click Counter : </h1>
+        <h2 id="count">0</h2>
+          
+        <button id="button" type="button" onclick="Counter()">Click</button>
+
+    </body>
+    <script>
+        let cnt = 0;
+        function Counter(){
+               cnt = cnt + 1;
+               document.getElementById("count").innerHTML = cnt;
+               if(cnt == 10){
+                document.getElementById("button").disabled = true;
+                }
+            }
+    </script>
+</html>

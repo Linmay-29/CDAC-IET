@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>
+            Employee Data
+        </title>
+    </head>
+
+    <body>
+        
+        <h1>Employee Data</h1>
+        <input  id="fname" type="text" placeholder="Enter First Name">
+        <input id="lname" type="text" placeholder="Enter Last Name">
+        <input id="email" type="email" placeholder="example@mail.com">
+        <input id="dob" type="date">
+        <button type="button" onclick=accept()>Add</button>
+        <br>
+        <br>
+        <p id="error" style="visibility: hidden;">Data Invalid</p>
+        <br>
+        <br>
+        <table id="table" border="1" style="border-collapse: collapse;">
+           <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>DOB</th>
+                <th>Action</th>
+            </tr>
+        </table>
+            
+
+            <script>
+        function accept(){
+                let fname = document.getElementById("fname").value;
+                let lname = document.getElementById("lname").value;
+                let email = document.getElementById("email").value;
+                let date = document.getElementById("dob").value;
+
+                let flag = true;
+                if((fname.match(/[a-z A-Z]/i))){ 
+                    flag = false;
+                }
+                if((lname.match(/[a-z A-Z]/i))){
+                    
+                    flag = false;
+                }
+                if((email.match(/[a-z A-Z]+@[a-z A-Z]+\.[a-z A-Z]{2,3}$/i))){
+                   
+                    flag = false;
+                }
+                if(flag == false){
+                    let table = document.getElementById("table");
+                    let newrow = table.insertRow(table.rows.length);
+                    newrow.insertCell(0).innerHTML = fname;
+                    newrow.insertCell(1).innerHTML = lname;
+                    newrow.insertCell(2).innerHTML = email;
+                    newrow.insertCell(3).innerHTML = date;
+                    newrow.insertCell(4).innerHTML = 
+                        '<button type="button" onclick="editData(this)">Edit</button>' +
+                        '<button type="button" onclick="deleteData(this)">Delete</button>';
+                }else{
+                    let error = document.getElementById("error");
+                    error.style.visibility = "visible";
+                }
+                clearFields();
+        }
+        function editData(button){
+            let row = button.parentNode.parentNode;
+            let fname = row.cells[0];
+            let lname = row.cells[1];
+            let email = row.cells[2];
+            let dob = row.cells[3];
+
+            let newFname = prompt("Enter First Name",fname.innerHTML);
+            let newLname = prompt("Enter Last Name",lname.innerHTML);
+            let newMail = prompt("Enter First Name",email.innerHTML);
+            let newDob = prompt("Enter First Name",dob.innerHTML);
+
+            fname.innerHTML = newFname;
+            lname.innerHTML = newLname;
+            email.innerHTML = newMail;
+            dob.innerHTML = newDob;
+        }
+        function deleteData(button){
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+        function clearFields(){
+                document.getElementById("fname").value = "";
+                document.getElementById("lname").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("dob").value = "";
+        }
+
+    </script>
+
+    </body>
+    
+    </html>
