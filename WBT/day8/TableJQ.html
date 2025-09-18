@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 8px 12px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#showBtn").click(function(){
+                const num = parseInt($("#num").val());
+                const from = parseInt($("#from").val());
+                const to = parseInt($("#to").val());
+
+                if (isNaN(num) || isNaN(from) || isNaN(to)) {
+                    $("#output").html("<p>Please enter valid numbers.</p>");
+                    return;
+                }
+
+                let tableHTML = `
+                    <table>
+                        <tr>
+                            <th>Expression</th>
+                            <th>Result</th>
+                        </tr>
+                `;
+
+                for (let i = from; i <= to; i++) {
+                    tableHTML += `
+                        <tr>
+                            <td>${num} × ${i}</td>
+                            <td>${num * i}</td>
+                        </tr>
+                    `;
+                }
+
+                tableHTML += `</table>`;
+                $("#output").html(tableHTML);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>Multiplication Table Generator</h3>
+    <input type="number" id="num" placeholder="Enter number"> <br><br>
+    <input type="number" id="from" placeholder="Table from"> <br><br>
+    <input type="number" id="to" placeholder="Table up to"> <br><br>
+    <button id="showBtn">Show Table</button>
+
+    <div id="output"></div>
+</body>
+</html>

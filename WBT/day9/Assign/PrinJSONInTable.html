@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Print JSON in Table</title>
+        <script>
+            function accept(){
+                let req = new XMLHttpRequest();
+                let index = document.getElementById("Index").value;
+                let table = document.getElementById("table");
+                req.open("GET",`https://jsonplaceholder.typicode.com/posts/${index}`);
+                req.send();
+                req.onload = function(){
+                    let output = JSON.parse(this.responseText);
+                    if(output.id == index){
+                        let table = document.getElementById("table");
+                        let newrow = table.insertRow(table.rows.length);
+                        newrow.insertCell(0).innerHTML = output.id;
+                        newrow.insertCell(1).innerHTML = output.title;
+                        console.log(output.id);
+                        console.log(output.title);
+                        table.style.visibility = "visible";
+                    }
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <input id="Index" type="text" placeholder="Enter Index">
+        <button id="b1" type="button" onclick="accept()">Click</button>
+
+        <p id="p1" style="visibility: hidden;">Not Found</p>
+
+        <table id="table" border="1" style="visibility: hidden; border-collapse: collapse; text-align: center;">
+        <tr>
+            <th>ID</th>
+            <th>Titile</th>
+        </tr>
+        </table>
+
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>CLass MAN</title>
+        
+        <style>
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        </style>
+        <script>
+            function add(){
+                document.getElementById("text").classList.add("highlight");
+            }
+            function remove(){
+                document.getElementById("text").classList.remove("highlight");
+            }
+            function toggle(){
+                document.getElementById("text").classList.toggle("highlight");
+            }
+        </script>
+    </head>
+    <body>
+        <p id="text">Hello World!</p>
+        <button type="button1" onclick="add()">Add Class</button>
+        <button type="button2" onclick="remove()">Remove Class</button>
+        <button type="button3" onclick="toggle()">Toggle Class</button>
+    </body>
+</html>

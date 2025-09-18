@@ -1,0 +1,19 @@
+pwd - path of current directory
+ls - list all files
+mkdir dir_name - make directory (directory is always in blue color)
+rmdir name / rm -r name - used to remove directory
+whoami - Gives you the user name
+cd dic_name - change directory
+date - gives the current date
+date +%D - give in format of (09/04/25)
+date +%T - give current time in format of (10:40:47)
+date +%H:%M:%S - give current time in format of (10:43:16)
+cd .. - chang to previous directory
+ls -lp - lists the directory in alphabetical order
+ls -ltr - lists the directory in acending order
+touch filename - create files
+nano filename - enter into editor and can make changes
+cat filename - used to read the file
+mv - to move
+cp - to copy
+

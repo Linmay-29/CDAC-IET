@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            JSON Handling
+        </title>
+        <script>
+            function accept(){
+                const data = {
+                    fname : document.getElementById("fname").value,
+                    lname : document.getElementById("lname").value,
+                    age : document.getElementById("age").value
+                }
+                json(data)
+            }
+            function json(data){
+                const jsondata = JSON.stringify(data)
+                console.log("JSON DATA : ",jsondata)
+                display(data)
+            }
+            function display(data){
+                const table = document.getElementById("tablebody")
+                   const row = `    
+                    <tr>
+                        <td>${data.fname}</td>
+                        <td>${data.lname}</td>
+                        <td>${data.age}</td>
+                        </tr>
+                `;
+                        tablebody.innerHTML += row; 
+                
+            }
+        </script>
+    </head>
+    <body>
+        <input id="fname" type="text" placeholder="First Name"><br><br>
+        <input id="lname" type="text" placeholder="Last Name"><br><br>
+        <input id="age" type="number" placeholder="Age"><br><br>
+        <button type="button" onclick="accept()">Save</button>
+        <div id="output"></div>
+        <table border="1">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+            <tbody id="tablebody"></tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>PreDefined Validation</title>
+        <script>
+            function validate(){
+                let user = document.getElementById("user");
+                let id = document.getElementById("id");
+                let p1 = document.getElementById("p1");
+                let flag = true;
+                let count = 0;
+                if(!user.checkValidity()){
+                    p1.innerText = "User name must be between 3 to 5 digits"
+                    p1.style.visibility = "visible";
+                    flag = false;
+                    count++;
+                }
+                if(!id.checkValidity()){
+                    p1.innerText = "Id is Compulsary";
+                    p1.style.visibility = "visible";
+                    flag = false;
+                    count++;
+                }
+                if(count == 2){
+                    p1.innerText = "Enter Valid Data"
+                    p1.style.visibility = "visible";
+                }
+                if(flag == true){
+                    p1.innerText = "Data is Correct";
+                    p1.style.color = "green";
+                    p1.style.visibility = "visible";
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <input type="text" id="user" placeholder="Enter Username" required minlength="3" required maxlength="5">
+        <input type="number" id="id" placeholder="Enter Number" required min="10">
+        <button id="button" id="b1" type="button" onclick="validate()">Click</button>
+
+        <br>
+        <p id="p1" style="visibility: hidden; color: red;"></p>
+    </body>
+</html>
