@@ -1,5 +1,6 @@
 pwd - path of current directory
 ls - list all files
+
 mkdir dir_name - make directory (directory is always in blue color)
 rmdir name / rm -r name - used to remove directory
 whoami - Gives you the user name
