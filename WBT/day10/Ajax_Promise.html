@@ -1,0 +1,29 @@
+<html>
+    <body>
+        
+        <p id="text"></p>
+        <button id="button" type="button" onclick="Check()">Check</button>
+        <script>
+        
+            function Check(){
+                let index = 69
+                let myPromise = new Promise(function(resolve,reject){
+                    let req = new XMLHttpRequest();
+                    req.open("GET",`https://jsonplaceholder.typicode.com/posts/${index}`)
+                    req.send();
+                    req.onload = function(){
+                        if((this.status == 200))
+                            resolve(this.responseText);
+                        else
+                            reject("Error 404 || data not found");
+                    }
+                });
+                myPromise.then(function(resolve){
+                    document.getElementById("text").innerHTML = resolve;
+                },function(reject){
+                    document.getElementById("text").innerHTML = reject;
+                })
+            }
+        </script>
+    </body>
+</html>

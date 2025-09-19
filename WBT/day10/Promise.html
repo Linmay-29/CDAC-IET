@@ -1,0 +1,25 @@
+<html>
+    <body>
+        
+        <p id="text"></p>
+        <button id="button" type="button" onclick="Check()">Check</button>
+        <script>
+            let a = 11;
+            function Check(){
+                let myPromise = new Promise(function(resolve,reject){
+                    if(a <= 10){
+                        resolve("Promise Succeded");
+                    }
+                    else{
+                        reject("Promise Rejected");
+                    }
+                });
+                myPromise.then(function(resolve){
+                    document.getElementById("text").innerHTML = resolve;
+                },function(reject){
+                    document.getElementById("text").innerHTML = reject;
+                })
+            }
+        </script>
+    </body>
+</html>
