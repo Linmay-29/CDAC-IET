@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>
+            Browser CallBack
+        </title>
+    </head>
+    <body   onload="setTimeout(() => {
+        alert('hi');
+    }, 500);">
+        <p id="clock">00:00:00</p>
+        <button id="star" onclick="startClock()">Start</button>
+        <button id="stop" onclick="stopClock()">Stop</button>
+        <button id="reset" onclick="Reset()">Reset</button>
+        <script>
+            let intervalID = null;
+            
+            function Clock(){
+                let p = new Date();
+                document.getElementById("clock").innerHTML = 
+                
+                    p.getHours() + ":" +
+                    p.getMinutes() + ":" +
+                    p.getSeconds()
+            }
+            function startClock(){
+                if(!intervalID){
+                    intervalID = setInterval(Clock,1000)
+                }
+            }
+            function stopClock(){
+                clearInterval(intervalID)
+                intervalID = null
+                
+            }
+            function showClock(){
+                setTimeout(Clock,3000)
+            }
+            function Reset(){
+                document.getElementById("clock").innerHTML = "00:00:00"
+            }
+        </script>
+    </body>
+</html>

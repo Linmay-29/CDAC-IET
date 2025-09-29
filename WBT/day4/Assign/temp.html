@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Table of Number</title>
+        <script>
+            
+            // window.onload =  function(){
+            //     let input = prompt("Enter a number");
+            //     display(input);
+            // }
+            function display(){
+               let input = parseInt(document.getElementById("numberInput").value);
+                let table = document.getElementById("table");
+                
+                let body = document.getElementById("body");
+                for(let i=1;i<=10;i++){
+                    let row = document.createElement("tr"); 
+                    let data = document.createElement("td"); 
+
+                    data.innerText = input * i;
+                    row.appendChild(data);
+                    body.appendChild(row);
+                }
+
+                let head = document.getElementById("head");
+                head.innerText = "Table of "+ input;
+                table.style.visibility="visible";
+            }
+        </script>
+    </head>
+    <body>
+    <h2>Enter a number to generate its multiplication table</h2>
+    <input type="text" id="numberInput" placeholder="e.g. 7">
+    <button onclick="display()">Generate Table</button> <br> <br> <br>
+    <table id="table" border="1" style="visibility: hidden; border-collapse: collapse; text-align: center;">
+    <thead>
+        <tr>
+        <th id = "head"></th>
+        </tr>
+    </thead>
+    <tbody id="body">
+    
+    </tbody>
+    </table>
+
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corner Div Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            background-color: coral;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        #box1 {
+            left: 0;
+        }
+        #box2 {
+            right: 0;
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="box">Box 1</div>
+    <div id="box2" class="box">Box 2</div>
+
+    <script>
+        let interval1, interval2;
+
+        
+        function animateBox1() {
+            let pos = 0;
+            interval1 = setInterval(() => {
+                if (pos >= 100) {
+                    clearInterval(interval1);
+                } else {
+                    pos += 2;
+                    document.getElementById("box1").style.top = pos + "px";
+                }
+            }, 20);
+        }
+
+        
+        function animateBox2() {
+            setTimeout(() => {
+                let pos = 0;
+                interval2 = setInterval(() => {
+                    if (pos >= 550) {
+                        clearInterval(interval2);
+                    } else {
+                        pos += 2;
+                        document.getElementById("box2").style.top = pos + "px";
+                    }
+                }, 20);
+            }, 2000);
+        }
+
+        
+        animateBox1();
+        animateBox2();
+    </script>
+</body>
+</html>

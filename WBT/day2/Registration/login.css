@@ -1,0 +1,52 @@
+#main{  
+    margin-left: 35%;
+    margin-top: 160px;
+    width: 300px;
+    height: 300px;
+    border-style: solid ;
+    border-radius: 8px;
+    border-width: 1px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #9C7DCF, #5DD1AE);
+}
+#form{
+    text-align: center;
+}
+#heading{
+    margin-left: 5px;
+}
+#un{
+
+}
+#unip,#passip{
+    border: 1px solid;
+    height: 32px;
+    width: 200px;
+    border-radius: 6px;
+}
+#pass{
+    margin-top: 20px;
+}
+#logbt{
+    margin-top: 20px;
+    width: 200px;
+    height: 25px;
+    border-style: solid; 
+    border-width: 1px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #8A6BC7, #4FC9A5);
+}
+#logDiv{
+    
+}
+#clrbt{
+    margin-right: 150px;
+    margin-top: 15px;
+    border-width: 2px;
+} 
+#t1{
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 395px;
+    
+}

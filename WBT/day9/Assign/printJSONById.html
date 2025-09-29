@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Print AS Per Index</title>
+        <script>
+            function accept(){
+                let index = document.getElementById("Index").value;
+                let req = new XMLHttpRequest();
+                req.onload = function(){ 
+                    let output = this.responseText;
+                    document.getElementById("p1").innerText = output;
+                    document.getElementById("p1").style.visibility = "visible"; 
+                }
+                req.open("GET",`https://jsonplaceholder.typicode.com/posts/${index}`);
+                req.send();
+            }
+        </script>
+    </head>
+    <body>
+        <input id="Index" type="text" placeholder="Enter Index">
+        <button id="b1" type="button" onclick="accept()">Click</button>
+
+        <p id="p1" style="visibility: hidden;">Not Found</p>
+    </body>
+</html>

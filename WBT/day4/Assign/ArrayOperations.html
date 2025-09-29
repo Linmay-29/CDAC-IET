@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Array Operations</title>
+        <script>
+            let arr = [1,2,3,4,5,6,7,8,9,10];
+            let arr2 = [...arr];
+            window.onload = function(){
+                display();
+            };
+            function display(){
+                let print = document.getElementById("arr");
+                print.innerText = arr;
+            }
+            function addStart(){
+                let input = prompt("Enter number");
+                if(input!=null){
+                    arr.unshift(input);
+                    display();
+                }
+            }
+            function addEnd(){
+                let input = prompt("Enter number");
+                if(input!=null){
+                    arr.push(input);
+                    display();
+                }
+            }
+            function delStart(){
+                arr.shift();
+                display();
+            }
+            function delEnd(){
+                arr.pop();
+                display();
+            }
+            function odd(){
+                let arr1 = document.getElementById("arr");
+                let oddArr1 = (arr2.filter(ele=>{
+                    return ele % 2 != 0;
+                }));
+                arr1.innerText = oddArr1;
+            }
+            function even(){
+                let arr1 = document.getElementById("arr");
+                let evenArr1 = (arr2.filter(ele=>{
+                    return ele % 2 == 0;
+                }));
+                arr1.innerText = evenArr1;
+            }
+        </script>
+    </head>
+    <body>
+        <p id="arr" style="margin-bottom: 20px;"></p>
+        <button style="margin-bottom: 20px;" id="addStart" type="button" onclick=addStart()>addStart</button>
+        <button style="margin-bottom: 20px;" id="addEnd" type="button" onclick=addEnd()>addEnd</button>
+        <button style="margin-bottom: 20px;" id="delStart" type="button" onclick=delStart()>delStart</button>
+        <button style="margin-bottom: 20px;" id="delEnd" type="button" onclick=delEnd()>delEnd</button>
+        <button style="margin-bottom: 20px;" id="odd" type="button" onclick=odd()>odd</button>
+        <button style="margin-bottom: 20px;" id="even" type="button" onclick=even()>even</button>
+    </body>
+</html>

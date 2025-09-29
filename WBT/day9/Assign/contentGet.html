@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            GET METHOD
+        </title>
+        <script>
+            function accept(){
+                let req = new XMLHttpRequest();
+                req.onload = function(){
+         
+                    // console.log(this);
+                    console.log(this.responseText); 
+                    let output = this.responseText;
+                    document.getElementById("p1").innerText = output;
+                    document.getElementById("p1").style.visibility = "visible";  
+                }
+                req.open("GET","Data.txt");
+                req.send();
+            }
+        </script>
+    </head>
+    <body>
+        <button id="button" onclick="accept()">Click ME</button>
+        <p id="p1" style="visibility: hidden;"  >Not found</p>
+    </body>
+</html>

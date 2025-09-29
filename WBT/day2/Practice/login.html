@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 200px;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            margin-top: 15px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="reset"] {
+            background-color: #f44336;
+            margin-right: 10px;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form action="">
+        <label>Enter UserName</label>
+        <input type="text" name="user" id="u1" />
+        <br/>
+        <label>Enter Password</label>
+        <input name="pass" type="password" maxlength="5" />
+        <br/>
+        <input type="reset" />
+        <input type="submit" value="Login" />
+        <button type="button" onclick="window.location.href='Assign.html'" >submit</button>
+    </form>
+    <p id = "p1">Before changing</p>
+    
+    <button type="button" onclick="document.getElementById('p1').innerText='after change'">click me</button>
+</body>
+</html>

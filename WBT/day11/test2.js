@@ -1,0 +1,1 @@
+function display(){console.log("Hello Interal");} function getData(print){setInterval(print,2000);} getData(display);

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Factorial
+        </title>
+        <script src = jquery-3.7.1.min.js></script>
+        <script>
+            $(document).ready(function(){
+                $("#fact").on("change",function(){
+                    const num = parseInt($(this).val());
+                    let factorial = 1;
+                    if(num >= 0){
+                        for(let i = 1;i<= num;i++){
+                            factorial *= i;
+                        } 
+                        $("#result").text(`factorial of ${num} is ${factorial}`);
+                        }
+                        else {
+                            $("#result").text(`Enter a non negative number`);
+                        }
+                    
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <h3>Factorial Calculator</h3>
+        <input id="fact" type="number" placeholder="e.g 5">
+        <p id="result"></p>
+    </body>
+</html>

@@ -1,0 +1,1 @@
+function fact(num){if(num==0 || num==1){return 1;} return num*fact(--num);} let input = process.argv[2]; let fact1 = fact(input); console.log(fact1);

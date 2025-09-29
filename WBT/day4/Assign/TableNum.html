@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Table of Number</title>
+        <script>
+            
+            window.onload =  function(){
+                let input = prompt("Enter a number");
+                display(input);
+            }
+            function display(input){
+                let table = document.getElementById("table");
+                for(let i=1;i<=10;i++){
+                    let one = document.getElementById(i);
+                    one.innerText = input * i;
+                }
+                let head = document.getElementById("head");
+                head.innerText = "Table of "+ input;
+                table.style.visibility="visible";
+            }
+        </script>
+    </head>
+    <body>
+    <table id="table" border="1" style="visibility: hidden; border-collapse: collapse; text-align: center;">
+    <thead>
+        <tr>
+        <th id = "head"></th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr>
+        <td id="1"></td>
+        </tr>
+        <tr>
+        <td id="2"></td>
+        </tr>
+        <tr>
+        <td id="3"></td>
+        </tr>
+        <tr>
+        <td id="4"></td>
+        </tr>
+        <tr>
+        <td id="5"></td>
+        </tr>
+        <tr>
+        <td id="6"></td>
+        </tr>
+        <tr>
+        <td id="7"></td>
+        </tr>
+        <tr>
+        <td id="8"></td>
+        </tr>
+        <tr>
+        <td id="9"></td>
+        </tr>
+        <tr>
+        <td id="10"></td>
+        </tr>
+    </tbody>
+    </table>
+
+    </body>
+</html>

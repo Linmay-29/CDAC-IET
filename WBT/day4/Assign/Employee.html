@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Employee Data</title>
+        <script>
+            function acceptFirst(){
+                const first = document.getElementById("firstName").value;
+                const last = document.getElementById("lastName").value;
+                const email = document.getElementById("email").value;
+                const dob = document.getElementById("dob").value;
+
+                let input1 = document.getElementById("1");
+                let input2 = document.getElementById("2");
+                let input3 = document.getElementById("3");
+                let input4 = document.getElementById("4");
+
+                let flag = true;
+                if (first === "") {
+                    input1.style.visibility = "visible";
+                    flag = flag;
+                }else{
+                    input1.style.visibility = "hidden";
+                }
+                if (last === "") {
+                    input2.style.visibility = "visible";
+                    flag = flag;
+                }else{
+                    input2.style.visibility = "hidden";
+                }
+                if(email === "") {
+                    input3.style.visibility = "visible";
+                    flag = flag;
+                }else{
+                    input3.style.visibility = "hidden";
+                }
+                if(dob === "") {
+                    input4.style.visibility = "visible";
+                    flag = flag;
+                }else{
+                    input4.style.visibility = "hidden";
+                }
+
+                if(flag){
+                    document.getElementById("first").innerText = first;
+                    document.getElementById("last").innerText = last;
+                    document.getElementById("Email").innerText = email;
+                    document.getElementById("Dob").innerText = dob;
+                    document.getElementById("table").style.visibility = "visible";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+        <form>
+            <input type="text" id="firstName" placeholder="Enter First Name"> 
+            <p id="1" style="visibility: hidden;">Enter Valid First Name</p>
+            <input type="text" id="lastName" placeholder="Enter Last Name"> 
+             <p id="2" style="visibility: hidden;">Enter Valid Last Name</p>
+            <input type="email" id="email" placeholder="Enter Email" > 
+             <p id="3" style="visibility: hidden;">Enter Valid Email</p>
+            <input type="date" id="dob" placeholder="Enter Date of Birth"> 
+             <p id="4" style="visibility: hidden;">Enter Valid Date</p>
+
+            <input type="button" name="Submit" value="Submit" onclick=acceptFirst()>
+        </form>
+
+        <h1>Emplyee Data</h1> <br>
+
+        <table id="table" border="1" style="border-collapse: collapse; visibility: hidden; text-align: center;">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Date Of Birth</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="first"></td>
+                    <td id="last"></td>
+                    <td id="Email"></td>
+                    <td id="Dob"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

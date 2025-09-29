@@ -1,0 +1,60 @@
+
+<head>
+    <title>Simple Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Simple Calculator</h2>
+        <input id="num1" type="number" placeholder="Enter 1st number">
+        <input id="num2" type="number" placeholder="Enter 2nd number">
+        <br>
+        <button id="add">ADD</button>
+        <button id="sub">SUB</button>
+        <button id="mul">MULTIPLY</button>
+        <button id="div">DIVIDE</button>
+        <button id="clear">CLEAR</button>
+        <div id="result">Result: 0</div>
+    </div>
+
+    <script>
+        function getValues() {
+            let a = parseFloat($("#num1").val());
+            let b = parseFloat($("#num2").val());
+            return [a, b];
+        }
+
+        $(document).ready(function () {
+            $("#add").click(function () {
+                const [a, b] = getValues();
+                $("#result").text("Result: " + (a + b));
+            });
+
+            $("#sub").click(function () {
+                const [a, b] = getValues();
+                $("#result").text("Result: " + (a - b));
+            });
+
+            $("#mul").click(function () {
+                const [a, b] = getValues();
+                $("#result").text("Result: " + (a * b));
+            });
+
+            $("#div").click(function () {
+                const [a, b] = getValues();
+                if (b === 0) {
+                    $("#result").text("Result: Cannot divide by zero");
+                } else {
+                    $("#result").text("Result: " + (a / b));
+                }
+            });
+
+            $("#clear").click(function () {
+                $("#num1").val('');
+                $("#num2").val('');
+                $("#result").text("Result: 0");
+            });
+        });
+    </script>
+</body>
+</html>

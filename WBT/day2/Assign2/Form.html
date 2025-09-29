@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form</title>
+</head>
+<body style="background-color: bisque;">
+    
+    <h1 style="text-align: center;">Id Card Form</h1>
+    <form>
+        <label >Enter First Name</label>
+        <input type = "text" name="FirstName" />
+        <br>
+        <br>
+        <label >Enter Middle Name</label>
+        <input type = "text" name="MiddleName"/>
+        <br>
+        <br>
+        <label >Enter Last Name</label>
+        <input type = "text" name="LastName" />
+        <br>
+        <br>
+        <div>
+        <label >Enter PRN</label>
+        <input type = "number" name="PRN" />
+        <label style="padding-left: 4cm;">Enter Blood Group</label>
+        <input type = "text" name="BloodGrp" />
+        </div>
+        <br>
+        <label>Enter BirthDate</label>
+        <input type="date" name="BirthDate"/>
+        <br>
+        <br>
+        <label>Select Locality</label>
+        <br>
+        <label>Yes</label>
+        <input type="radio" name="Yes">
+        <br>
+        <label>No</label>
+        <input type="radio" name="Yes">
+        <br>
+        <label>Enter Address</label>
+        <Address><textarea name="" id="" cols="40" rows="5"></textarea></Address>
+        <div style="text-align: center;">
+        <input type="reset" name = "Clear"/>
+        <input type="submit" name="Submit"/>
+        </div>
+        <label>Select Known Language</label>
+        <br>
+        <label>English</label>
+        <input type="checkbox">
+        <br>
+        <select value="Select City" name="City">
+            <option selected disabled>Select City</option>
+            <option>
+                Pune
+            </option>
+            <option>
+                Jalgaon
+            </option>
+            <option>Mumbai</option>
+        </select>
+        <audio controls><source src="test.mp3" type="audio/mp3"></audio>
+    </form>
+
+</body>
+</html>
