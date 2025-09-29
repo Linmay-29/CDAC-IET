@@ -1,0 +1,16 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "Practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Linmay",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "package": "^1.0.1"
+  }
+}
